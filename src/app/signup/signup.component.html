@@ -1,0 +1,82 @@
+<div class="formbg">
+
+    <mat-toolbar>
+        <h3 class="title">User Registration</h3>
+    </mat-toolbar>
+
+    <!-- /////////////////////////////////////////////////// -->
+    <form [formGroup]="SIGNUPDETAIL" class="formcontent" (ngSubmit)="onSubmit(SIGNUPDETAIL)">
+        <div class="">
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.name.touched && f.name.invalid" class="errormsg">
+                    <div *ngIf="f.name.errors.required">*Name is required.</div>
+                    <div *ngIf="f.name.errors.minlength">*Name should be 3 character.</div>
+                    <div *ngIf="f.name.errors.pattern">*Remove space from name</div>
+                </div>
+                <input formControlName="name" id="name" type="text" class="form-control" placeholder="Name">
+            </div>
+
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.emailAddress.touched && f.emailAddress.invalid" class="errormsg">
+                    <div *ngIf="f.emailAddress.errors.required">*Email Address is required.</div>
+                    <div *ngIf="f.emailAddress.errors.email">*Enter valid Email Address.</div>
+                </div>
+                <input formControlName="emailAddress" id="emailAddress" type="text" class="form-control" placeholder="Email">
+
+            </div>
+        </div>
+        <div>
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.age.touched && f.age.invalid" class="errormsg">
+                    <div *ngIf="f.age.errors.required">*age is required</div>
+                </div>
+                <input formControlName="age" id="age" type="text" maxlength="2" class="form-control" placeholder="Age">
+
+            </div>
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.gender.touched && f.gender.invalid" class="errormsg">
+                    <div *ngIf="f.gender.errors.required">*Gender is required</div>
+                </div>
+                <input formControlName="gender" id="gender" type="text" class="form-control" placeholder="Gender">
+
+            </div>
+        </div>
+        <div>
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.phoneNo.touched && f.phoneNo.invalid" class="errormsg">
+                    <div *ngIf="f.phoneNo.errors.required">*Phone No is required</div>
+                </div>
+                <input formControlName="phoneNo" id="phoneNo" maxlength="11" type="text" class="form-control" placeholder="Phone No">
+
+            </div>
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.address.touched && f.address.invalid" class="errormsg">
+                    <div *ngIf="f.address.errors.required">*Address is required</div>
+                </div>
+                <input formControlName="address" id="address" type="text" class="form-control" placeholder="Address">
+
+            </div>
+        </div>
+        <div>
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.password.touched && f.password.invalid" class="errormsg">
+                    <div *ngIf="f.password.errors.required">*Password is required</div>
+                </div>
+                <input formControlName="password" id="password" maxlength="14" type="password" class="form-control" placeholder="Password">
+
+            </div>
+            <div class="form-group col-sx-6">
+                <div *ngIf="f.cpassword.touched && f.cpassword.invalid" class="errormsg">
+                    <div *ngIf="f.cpassword.errors.required">*Confirm Your Password</div>
+                </div>
+                <input formControlName="cpassword" id="cpassword" maxlength="14" type="password" class="form-control" placeholder="Confirm Password">
+
+            </div>
+        </div>
+        <button class="btn btn-primary float-right" [disabled]="SIGNUPDETAIL.invalid" type="submit">Submit</button>
+    </form>
+    <div>
+        <button class="btn btn-btn-secondary lastbtn" (click)="setValue()">Reset value</button>
+        <button class="btn btn-btn-primary lastbtn" (click)="cancel()">Cancel</button>
+    </div>
+</div>

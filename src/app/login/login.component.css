@@ -1,0 +1,20 @@
+    .loginwidth {
+        max-width: 500px;
+    }
+    
+    .lstrow {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 2%;
+    }
+    
+    #container {
+        margin-top: 50px;
+    }
+    
+    mat-tab-group {
+        min-width: 60%;
+        padding: 2%;
+        background-color: whitesmoke;
+        border-radius: 10px;
+    }
